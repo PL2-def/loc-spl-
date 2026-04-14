@@ -7,6 +7,8 @@
     <title>DriveEase - Location de Voitures</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <header class="navbar">
@@ -23,7 +25,7 @@
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
+            <div class="hero-content reveal">
                 <h1>Prenez le Volant de Vos Rêves</h1>
                 <p>Découvrez notre sélection de véhicules premium pour toutes vos aventures. Simple, rapide et sans compromis.</p>
                 <div class="hero-actions">
@@ -31,46 +33,173 @@
                     <button class="secondary-btn" id="hero-more">En savoir plus</button>
                 </div>
             </div>
+            <div class="hero-overlay"></div>
         </section>
 
-        <section id="fleet" class="fleet">
-            <h2>Notre Flotte</h2>
-            <div class="cars-grid">
-                <div class="card" id="car-1">
-                    <img src="images/sports_car.png" alt="Voiture de sport rouge devant la côte">
-                    <div class="card-content">
-                        <h3>Vitesse Absolue</h3>
-                        <p>Pour les amateurs de sensations fortes. Parfaite pour les routes côtières.</p>
-                        <div class="price">À partir de 150€/jour</div>
-                        <button class="book-btn">Louer celle-ci</button>
+        <section class="features section-padding">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <i data-lucide="shield-check"></i>
+                        <h3>Assurance Totale</h3>
+                        <p>Roulez l'esprit tranquille avec notre couverture premium incluse.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <i data-lucide="zap"></i>
+                        <h3>Réservation Instantanée</h3>
+                        <p>Votre véhicule prêt en moins de 5 minutes, sans paperasse inutile.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <i data-lucide="headphones"></i>
+                        <h3>Support 24/7</h3>
+                        <p>Une assistance dédiée à chaque étape de votre voyage.</p>
                     </div>
                 </div>
-                <div class="card" id="car-2">
-                    <img src="images/suv_car.png" alt="SUV de luxe en montagne">
-                    <div class="card-content">
-                        <h3>Aventure Premium</h3>
-                        <p>Confort et puissance pour vos escapades en montagne ou en famille.</p>
-                        <div class="price">À partir de 120€/jour</div>
-                        <button class="book-btn">Louer celle-ci</button>
+            </div>
+        </section>
+
+        <section id="fleet" class="fleet section-padding">
+            <div class="container">
+                <h2 class="reveal">Notre Flotte</h2>
+                <div class="cars-grid">
+                    <div class="card reveal" id="car-1">
+                        <div class="card-img">
+                            <img src="images/sports_car.png" alt="Voiture de sport rouge">
+                            <span class="badge">Performance</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>GT Speedster</h3>
+                            <div class="card-specs">
+                                <span><i data-lucide="users"></i> 2 places</span>
+                                <span><i data-lucide="gauge"></i> 320 km/h</span>
+                                <span><i data-lucide="cog"></i> Auto</span>
+                            </div>
+                            <p>L'adrénaline à l'état pur pour vos weekends sur la Côte d'Azur.</p>
+                            <div class="card-footer">
+                                <div class="price">150€<span>/jour</span></div>
+                                <button class="book-btn" data-car="GT Speedster">Louer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card reveal" id="car-2">
+                        <div class="card-img">
+                            <img src="images/suv_car.png" alt="SUV de luxe">
+                            <span class="badge">Confort</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Alpine Explorer</h3>
+                            <div class="card-specs">
+                                <span><i data-lucide="users"></i> 5 places</span>
+                                <span><i data-lucide="mountain"></i> 4x4</span>
+                                <span><i data-lucide="cog"></i> Auto</span>
+                            </div>
+                            <p>Dominez tous les terrains avec une élégance absolue et de l'espace pour tous.</p>
+                            <div class="card-footer">
+                                <div class="price">120€<span>/jour</span></div>
+                                <button class="book-btn" data-car="Alpine Explorer">Louer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card reveal" id="car-3">
+                        <div class="card-img">
+                            <img src="images/electric_car.png" alt="Electric Car">
+                            <span class="badge">Eco</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Volt Horizon</h3>
+                            <div class="card-specs">
+                                <span><i data-lucide="users"></i> 5 places</span>
+                                <span><i data-lucide="battery-charging"></i> 600km</span>
+                                <span><i data-lucide="leaf"></i> Zéro Emiss.</span>
+                            </div>
+                            <p>Le futur de la mobilité urbaine : silencieux, puissant et durable.</p>
+                            <div class="card-footer">
+                                <div class="price">90€<span>/jour</span></div>
+                                <button class="book-btn" data-car="Volt Horizon">Louer</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card" id="car-3">
-                    <img src="images/electric_car.png" alt="Voiture électrique chargeant en ville">
-                    <div class="card-content">
-                        <h3>Futur Électrique</h3>
-                        <p>Silence, technologie et zéro émission pour vos trajets urbains.</p>
-                        <div class="price">À partir de 90€/jour</div>
-                        <button class="book-btn">Louer celle-ci</button>
+            </div>
+        </section>
+
+        <section class="testimonials section-padding">
+            <div class="container">
+                <h2 class="reveal">Ce que disent nos conducteurs</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal">
+                        <div class="rating">★★★★★</div>
+                        <p>"Une expérience incroyable du début à la fin. La voiture était impeccable."</p>
+                        <div class="author">Marc D. — Lyon</div>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="rating">★★★★★</div>
+                        <p>"Le support client est d'une efficacité redoutable. Je recommande les yeux fermés."</p>
+                        <div class="author">Sophie L. — Paris</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 DriveEase. Tous droits réservés.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="logo">Drive<span>Ease</span></div>
+                    <p>La location de véhicules premium nouvelle génération.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#fleet">Flotte</a></li>
+                        <li><a href="#about">À Propos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>contact@driveease.com</p>
+                    <p>+33 1 23 45 67 89</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DriveEase. Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Modal de Réservation -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Réserver votre <span id="modal-car-name">véhicule</span></h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Nom Complet</label>
+                    <input type="text" id="name" required placeholder="Jean Dupont">
+                </div>
+                <div class="form-group">
+                    <label for="date-start">Date de Début</label>
+                    <input type="date" id="date-start" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Durée (jours)</label>
+                    <input type="number" id="duration" min="1" value="1" required>
+                </div>
+                <button type="submit" class="primary-btn">Confirmer la Réservation</button>
+            </form>
+            <div id="form-success" class="hidden">
+                <i data-lucide="check-circle"></i>
+                <p>Réservation confirmée ! Nous vous contacterons sous peu.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
+    <script>
+        // Initialisation de Lucide
+        lucide.createIcons();
+    </script>
 </body>
 </html>
